@@ -9,6 +9,7 @@
   <script src="assets/app.js"></script>
   <script src="assets/angularapp.js"></script>
   <script src="/assets/controllers/mainController.js"></script>
+  <script src="/assets/controllers/webcamController.js"></script>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/assets/app.css">
 
@@ -26,8 +27,59 @@
 
 
 
+
+
+<section class="container" ng-controller="webcamController as webcam">
+
+
+
+
+<h1>Webcam Ideas Test</h1>
+
+
+<video autoplay="true" id="videoElement">
+ 
+</video>
+
+<button ng-click="webcam.getVideo()">Make Webcam</button>
+<button id="startbutton" ng-click="webcam.takephoto()">Take photo</button>
+
+
+
+<input type="file" accept="image/*;capture=camera">
+
+<canvas id="canvas">
+</canvas>
+<div class="output">
+  <img id="photo" alt="The screen capture will appear in this box.">
+</div>
+
+
+</section>
+
+<p>I guess... I have come to a point in my life where I find it difficult what to say.</p>
+
+<p>Steve Jobs said, that. Maybe, there is something you always wanted to do</p>
+
+<p> I guess, <b>I started my life</b> with two things I knew, I knew:</p>
+
+<p>When I was ten, I loved computers. Well, I always loved computers. Everyone thought I was a hacker or a geek. And maybe I was or wasn't it really doesnt matter anymore. But I did love Visual Basic and developed a few different games and bits and pieces on Visual Basic Studio on Windows. </p>
+
+<p> The love of computers, was coupled with a love of philosophy and psychology</p>
+
+<p> When I was Sixteen, I started work as a Hypnotist. Teaching and training other hypnotists. This became my expertise' for the next ten years++</p>
+
+<p> When I was 28 years old, I was lucky that a friend, advised me, on how to alter my business processes, and got me into the world of affiliate marketing....</p>
+
+<p> Right now, I have just finished a Web Development Immersive Bootcamp in Silicon Roundabout, London... I have finished spending 3 months making internet things.</p>
+
+
 <br />
-<br /><!-- 
+<br />
+
+
+
+<!-- 
 
 <h1 class='padd'></h1>
 <ul class='timeline'>
