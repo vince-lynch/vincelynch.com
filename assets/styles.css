@@ -1,0 +1,93 @@
+body {
+  padding-top: 50px;
+  color: black;
+  text-size: 18px;
+  font-family: 'Quattrocento', serif;
+}
+.profile-header {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+header {
+  height: 455px;
+  background-color: #0066CC;
+  padding-bottom: 40px;
+  color: white;
+}
+
+header img {
+  border-radius: 125px;
+  width: 180px;
+}
+
+.about, .contact{
+  padding: 40px 15px;
+}
+
+.portfolio, .contact {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+ul.social-buttons li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    outline: 0;
+    color: white;
+    background-color: #428BCA;
+  }
+
+.contact {
+  border-top: 1px solid #eee;
+}
+
+footer {
+    height: 70px;
+}
+
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand {
+  color: white;
+}
+
+h1,h2 {
+  font-family: 'Oswald', sans-serif;
+  text-align:center;
+}
+.about p {
+    font: 400 16px/30px 'Quattrocento', sans-serif;
+    margin: 0 auto;
+    padding:10px 0;
+}
+
+
+.about-text-border {
+  border-bottom: 2px solid #eee;
+  border-top: 2px solid #eee;
+  padding: 10px 0;
+  margin: 30px auto;
+  width: 50%;
+}
+
+@media (max-width: 767px) {
+  .about-text-border {
+    width: 75%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .about-text-border {
+    width: 65%;
+  }
+
+}
+
+
+.portfolio-row1 {
+  margin-top: 20px;
+}
+

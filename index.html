@@ -1,209 +1,299 @@
-<!DOCTYPE html>
-<html ng-app="VinceLynch">
-<head>
-  <title>Vince Lynch - Web & Psychology</title>
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:500' rel='stylesheet' type='text/css'>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-resource.js"></script>
 
-  <script src="assets/app.js"></script>
-  <script src="assets/angularapp.js"></script>
-  <script src="/assets/controllers/mainController.js"></script>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./assets/favicon.ico">
 
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/assets/app.css">
+    <title>Vince Lynch - Web Developer</title>
 
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-</head>
-<body ng-controller="MainController as main">
-
-<header>
-    <div class="container">
-      <h1 class="logo">
-        VINCE<span>LYNCH</span>
-      </h1>
-      <section class="social">
-        <a class="btn" href="https://github.com/error25">Github</a>
-        <a class="btn" href="http://www.twitter.com/vincelynch">Twitter</a>
-      </section>
-    </div>
-  </header>
-
-  <div class="container">
-  {{ main.helloworld }}
+    <!-- Custom styles for this template -->
+    <link href="./assets/styles.css" rel="stylesheet">
+    <link href="./assets/timeline.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
 
 
-    <h1 class="project-name"></h1>
-    <div id="timeline">
-      <div class="timeline-item">
-        <div class="timeline-icon">
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-   width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
-<path fill="#FFFFFF" d="M19.998,6.766l-5.759-0.544c-0.362-0.032-0.676-0.264-0.822-0.61l-2.064-4.999
-  c-0.329-0.825-1.5-0.825-1.83,0L7.476,5.611c-0.132,0.346-0.462,0.578-0.824,0.61L0.894,6.766C0.035,6.848-0.312,7.921,0.333,8.499
-  l4.338,3.811c0.279,0.246,0.395,0.609,0.314,0.975l-1.304,5.345c-0.199,0.842,0.708,1.534,1.468,1.089l4.801-2.822
-  c0.313-0.181,0.695-0.181,1.006,0l4.803,2.822c0.759,0.445,1.666-0.23,1.468-1.089l-1.288-5.345
-  c-0.081-0.365,0.035-0.729,0.313-0.975l4.34-3.811C21.219,7.921,20.855,6.848,19.998,6.766z"/>
-</svg>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./js/ie-emulation-modes-warning.js"></script>
 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand scroll-top" href="#">VINCE LYNCH</a>
         </div>
-        <div class="timeline-content">
-          <h2>I spent ten years running a Hypnosis Training School</h2>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a data-toggle="collapse" data-target=".navbar-collapse" class="scroll-link" href="#" data-id="about">About</a></li>
+            <li><a data-toggle="collapse" data-target=".navbar-collapse" class="scroll-link" href="#" data-id="portfolio">Portfolio</a></li>
+            <li><a data-toggle="collapse" data-target=".navbar-collapse" class="scroll-link" href="#" data-id="career">Career</a></li>
+            <li><a data-toggle="collapse" data-target=".navbar-collapse" class="scroll-link" href="#" data-id="contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-          <img src="/assets/images/hypnosis.jpg">
+    <header>
+      <div class="container">
+        <div class="profile-header">
+          <img src="./assets/images/profile_photo.jpg" alt="profile-picture">
+          <h1>VINCE LYNCH</h1>
+          <p class="lead">Web Developer</p>
+        </div>
+      <div>  
+    </header>
 
-          Marketing the business, creating websites, managing newsletters, affiliate programs, forums, display/PPC advertising, Social Advertising. SEO
+    <section id="about" class="container about">
+      <h2>ABOUT ME</h2>
+      <div class="about-text-border">
+        <p>A psychology & business with ten years experience working in psychology & communication workshops and web content. I'm currently looking for a Web Development role that intergrates my previous Affiliate Marketing experience in London/Lisbon.</p>
+        <p>After studying a part-time course Digital Marketing at Westminster University earlier last year, I took a three-month career break in December to do GA Web Development Immersive course.</p>
+        <p>Twelve weeks later I'm amazed by how much I've learnt in such a short space of time. I am now looking for a junior web development role so that I can develop my career.</p>
+      </div>
+    </section>
 
-          </p>
-          <a href="#" class="btn">button</a>
+<h2>PORTFOLIO</h2>
+  <div class="row portfolio-row1">
+    <section id="portfolio" class="container portfolio col-md-10 col-md-offset-2">
+      
+      <div class="project-panel col-md-5">
+        <div class="thumbnail">
+          <img src="./assets/images/outease.png" alt="Outease - city choosing app">
+          <div class="caption">
+            <h3>Outease</h3>
+            <p>Explore the perfect city to live based on liberal criteria, browsing cities by the cost of living, coffee price, beer price & liberal policies. Built using Angular, Node.js and Express and using the Instagram API + Phantom JS Scraping techniques.</p>
+            <p>
+              <a href="https://stormy-coast-88459.herokuapp.com/#/" target='_blank' class="btn btn-default" role="button">Demo</a>
+              <a href="https://github.com/error25/Project_4" target='_blank' class="btn btn-default" role="button">GitHub</a>
+            </p>
+          </div>
         </div>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-icon">
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-   width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
-<g>
-  <path fill="#FFFFFF" d="M17.92,3.065l-1.669-2.302c-0.336-0.464-0.87-0.75-1.479-0.755C14.732,0.008,7.653,0,7.653,0v5.6
-    c0,0.096-0.047,0.185-0.127,0.237c-0.081,0.052-0.181,0.06-0.268,0.02l-1.413-0.64C5.773,5.183,5.69,5.183,5.617,5.215l-1.489,0.65
-    c-0.087,0.038-0.19,0.029-0.271-0.023c-0.079-0.052-0.13-0.141-0.13-0.235V0H2.191C1.655,0,1.233,0.434,1.233,0.97
-    c0,0,0.025,15.952,0.031,15.993c0.084,0.509,0.379,0.962,0.811,1.242l2.334,1.528C4.671,19.905,4.974,20,5.286,20h10.307
-    c1.452,0,2.634-1.189,2.634-2.64V4.007C18.227,3.666,18.12,3.339,17.92,3.065z M16.42,17.36c0,0.464-0.361,0.833-0.827,0.833H5.341
-    l-1.675-1.089h10.341c0.537,0,0.953-0.44,0.953-0.979V2.039l1.459,2.027V17.36L16.42,17.36z"/>
-</g>
-</svg>
-
-        </div>
-        <div class="timeline-content right">
-          <h2>Afterwards I started trying to work in Technology</h2>
-          <img src="/assets/images/google.jpg">
-          <p>
-            I worked on behalf of Google
-          </p>
-          <a href="#" class="btn">button</a>
+      <div class="project-panel col-md-5">
+        <div class="thumbnail">
+          <img src="./assets/images/greenhub.png" alt="Greenhub Screenshot">
+          <div class="caption">
+            <h3>GreenHub</h3>
+            <p>A RESTful Node.js site with a JavaScript AJAX front end. Users can recommend setup their own green-focused community projects around London. Backend Node.js & Frontend API</p>
+            <p>
+              <a href="needtofind" target='_blank' class="btn btn-default" role="button">Demo</a>
+              <a href="https://github.com/fhhopkinson/WDI_project_3" target='_blank' class="btn btn-default" role="button">GitHub</a>
+            </p>
+          </div>
         </div>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-icon">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-   width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
-<path fill="#FFFFFF" d="M19.998,6.766l-5.759-0.544c-0.362-0.032-0.676-0.264-0.822-0.61l-2.064-4.999
-  c-0.329-0.825-1.5-0.825-1.83,0L7.476,5.611c-0.132,0.346-0.462,0.578-0.824,0.61L0.894,6.766C0.035,6.848-0.312,7.921,0.333,8.499
-  l4.338,3.811c0.279,0.246,0.395,0.609,0.314,0.975l-1.304,5.345c-0.199,0.842,0.708,1.534,1.468,1.089l4.801-2.822
-  c0.313-0.181,0.695-0.181,1.006,0l4.803,2.822c0.759,0.445,1.666-0.23,1.468-1.089l-1.288-5.345
-  c-0.081-0.365,0.035-0.729,0.313-0.975l4.34-3.811C21.219,7.921,20.855,6.848,19.998,6.766z"/>
-</svg>
-
-        </div>
-        <div class="timeline-content">
-          <h2>LOREM IPSUM DOLOR</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo. Maiores magnam modi ab libero praesentium blanditiis consequatur aspernatur accusantium maxime molestiae sunt ipsa.
-          </p>
-          <a href="#" class="btn">button</a>
+    </section>
+  </div>
+  <div class="row">
+    <section id="portfolio" class="container portfolio col-md-10 col-md-offset-2">
+      <div class="project-panel col-md-5">
+        <div class="thumbnail">
+          <img src="./assets/images/worldbynumbers.png" alt="World by numbers Screenshot">
+          <div class="caption">
+            <h3>World By Numbers</h3>
+            <p>Ruby on Sinatra & Frontend jQuery with D3 Visualisations.</p>
+            <p>
+              <a href="https://damp-wave-98027.herokuapp.com/" target="_blank" class="btn btn-default" role="button">Demo</a>
+              <a href="https://github.com/error25/WDI_PROJECT2" target="_blank" class="btn btn-default" role="button">GitHub</a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+      <div class="project-panel col-md-5">
+        <div class="thumbnail">
+          <img src="./assets/images/overheardscreenshot.png" alt="Overheard timeout quiz">
+          <div class="caption">
+            <h3>Overheard</h3>
+            <p>Scrollable parallax jQuery-Based Trivia game-idea for TimeOut London.</p>
+            <p>
+              <a href="https://pacific-ravine-78310.herokuapp.com/" target="_blank" class="btn btn-default" role="button">Demo</a>
+              <a href="https://github.com/error25/WDI_PROJECT1" target="_blank" class="btn btn-default" role="button">GitHub</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
 
 
 
-<br />
-<br />
 
 
+    <section id="career" class="container career">
+      <div class="timeline-header page-header">
+        <h2>CAREER</h2>
+      </div>
+      <ul class="timeline">
+        <li>
+          <div class="timeline-badge">
+            <img class='timeline-logo' src="./assets/images/ga_cog.jpg" alt="GA logo">
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">General Assembly: Web Development Immersive</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i> August - Nov 2015 </p>
+            </div>
+            <div class="timeline-body">
+              <p>12 week intensive course to build coding skills and fluency in full stack web development • Learned Ruby, Rails, JavaScript/jQuery, HTML, CSS and SQL, with working knowledge in many other languages, frameworks and web development processes • 90+ hours a week developing web apps while collaborating and receiving feedback from professionals. One of the most rewarding and intense experiences of my life so far. It confirmed for me that I really love coding and want to use my abilities to further my career</p>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge">
+            <img class='timeline-logo' src="./assets/images/dmi.png" alt="Digital marketing institute @ University of Westminster logo">
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Digital Marketing Institute 10 week part-time course: Digital Marketing</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i> August 2015 - November 2015 </p>
+            </div>
+            <div class="timeline-body">
+              <p>An in-depth course covering SEO, PPC, Display, Analytics and Email Marketing, using the relevant tools, Google Adwords/Facebook Advertising etc.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge"><img class='timeline-logo' src="./assets/images/bf8circle.png" alt="BF8 logo"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Affiliate Marketer, BF8 Media ltd</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i> 2013 - 2015 </p>
+            </div>
+            <div class="timeline-body">
+              <p>BF8 is an affiliate marketing company, mainly responsible for media buying / managing the campaigns for larger affiliates ~ We were running large amounts of traffic for between 5-10% of profit. We specialise in Health & Wellbeing products and Skincare / Anti-aging but also a variety of other affiliate campaigns.</p>
+              <p>When I joined the company in December 2013 affiliate marketing I was mainly responsible for managing the traffic for larger affiliates, became the main source of revenue for the company. Most of the offers we got from Peerfly, Adxmi, F5Media, ShareaSale. I was primarily responsible for landing page creation, ads/banners/Facebook and campaign optimisation.</p><p>My day to day included: Working primarily with Facebook ~ Analysing Social Traffic, Excel/Spreadsheet management/Managing Outsources/Elance/etc, Affiliate marketing within the Diet / Health and Fitness niche, Managing multiple accounts, ad campaigns, finding new offers, split testing, running multiple versions of ads through Qwaya, building landing pages, article sites, and increasing conversions.</p>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge"><img class='timeline-logo iop-logo' src="./assets/images/googlecirclelogo.png" alt="Google logo"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Google Field Manager / Google via TRO Agency</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i> 2004 - 08 </p>
+            </div>
+            <div class="timeline-body">
+              <p>Worked on behalf of Google as a Manager, involved in setting up Google stores within stores across the UK and educating businesses/education & consumers about Google products @ Trade Shows, Training days and instores. Managed a team of 10 Google trained specialists.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge"><img class='timeline-logo iop-logo' src="./assets/images/daily-mail-logo.jpg" alt="Daily Mail Logo"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Daily Mail - Internet Marketing Consultant</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i> 2012 - 2013</p>
+            </div>
+            <div class="timeline-body">
+              <p>I took this role to develop business skills that involved selling Search Engine Optimisation, Display Advertising and Search Advertising to medium size businesses.</p>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge"><img class='timeline-logo iop-logo' src="./assets/images/streethypnosislogo.png" alt="Street Hypnosis logo"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Street Hypnosis Ltd et al / Hypnotist & NLP Workshop Producer.</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i> 2003 - 2012</p>
+            </div>
+            <div class="timeline-body">
+              <p>Founded a new movement in hypnotism, NLP, Firewalking, PUA, and motivational psychology that later became known as the ‘Street Hypnosis Movement’ built websites, forums, newsletters, joint-ventures, affiliate marketing campaigns, physical training courses in over 45 cities around the world, lectured to thousands of people and taught over 10,000 new hypnotists over a ten year period..</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge"><img class='timeline-logo iop-logo' src="./assets/images/royalhollowaylogo.jpg" alt="Royal Holloway Logo"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Royal Holloway, Master’s Degree, Business Administration and Management, General, 2:1</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i>September 2009 - October 2010</p>
+            </div>
+            <div class="timeline-body">
+              <p>Modules included: Global Economics, Marketing, Strategy, Philosophy of Management, Global Investment, Financial Accounting, HR, IT, Corp Finance, Entrepreneurship, Global Financial Markets, Business Analysis. Accredited by the Association of MBA’s</p>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge"><img class='timeline-logo iop-logo' src="./assets/images/lselogo.gif" alt="London School of Economics logo"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">The London School of Economics and Political Science (LSE) Business (Summer) School</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i> June 2009 - August 2009</p>
+            </div>
+            <div class="timeline-body">
+              <p>Modules included: Strategic Management,Entrepreneurship and Global Leadership..</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge"><img class='timeline-logo iop-logo' src="./assets/images/leedsunilogo.gif" alt="University of Leeds Logo"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">University of Leeds Bachelor’s Degree, Psychology, 2:1  Specialising in Psychotherapy & Counselling.</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i>September 2006 - May 2009</p>
+            </div>
+            <div class="timeline-body">
+              <p> </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-<!-- 
 
-<h1 class='padd'></h1>
-<ul class='timeline'>
-  <li class="year first">2016</li>
-  <li class='event offset-first'>
-  <b>Web Development Immersive</b> - General Assembly
-  </li>
+    <section id="contact" class="container contact">
+      <h2>CONTACT</h2>
+      <p class='lead'>autovincelynch@gmail.com</p>
+      <ul class="list-inline social-buttons">
+        <li>
+          <a href="https://github.com/error25" target="_blank"><i class="fa fa-github"></i></a>
+        </li>
+        <li>
+          <a href="http://uk.linkedin.com/in/vince_lynch" target="_blank"><i   class="fa fa-linkedin "></i></a>
+        </li>
+      </ul>
+    </section>
 
-  <li class="event">
-  <p>Made the decision to <b>GO BACK</b> to my entrepreneurial self and focus on my skills within <b>Tech</b> as a programmer, developer, and expert in Psychology. Decided to retrain in Ruby, Angular, NodeJS, jQuery etc to really push forwards my marketing and development skills in new technologies, building on my former experience as a internet marketer. 
-    </a>
-  </li>
+    <footer></footer>
 
-  <li class="year">2015</li>
-  <li class='event' href="#">
-    Worked for <b>Diageo</b>, as a <b>Off Trade Manager</b> curtosy of CPM <b>I aided the launch of products, and seasoning planned marketing events/campaigns in the Off-Trade</b> Anything outside of bars and clubs with the associated brands <b>secured deals and business for Diageo</b>
-  </li>
-  <li class="event offset-first">
-  <p><b>Affiliate Media Traffic Buyer</b>- Finished Work with BF8 Media. Worked in Health & fitness verticals </p>
-
-  </li>
-
-  <li class="year">2014</li>
-  <li class="event offset-first">
-  <p><b>Affiliate Marketer</b>- Restarted work with BF8 Media </p>
-
-  </li>
-
-
-
-  <li class="year">2013</li>
-  <li class="event offset-first">
-  <p><b>Google Field Manager </b> Worked on behalf of Google as an Educator & Trainer about Google services for Business & Education throughout the launch of Google Stores within stores and consumer tech shows across the UK - managed a team of 10.</p>
-  <img class='centered' src="/assets/images/google.png" alt=""/>
-  <a href='assets/images/google.jpg'>&copy;</a>
-  </li>
-
-
-
-
-  <li class="year">2012</li>
-  <li class="event offset-first">
-    <p>Final Year operating <b>Street Hypnosis Ltd </b>- now a fully online membership site </p>
-    <img class='centered' src="/assets/images/streethypnosis.png" alt=""/>
-    <a href='assets/images/streethypnosis.jpg'>&copy;</a>
-  </li>
-  <li class="event">
-    <p>Started working for <b>BF8 Media as an affiliate marketer</b></p>
-    <img class='centered' src="/assets/images/bf8.png" alt=""/>
-    <a href='assets/images/bf8.jpg'>&copy;</a>
-  </li>
-
-
-    <li class="year">2010</li>
-    <li class="event offset-first">
-      <p>I have successfully taught hypnosis to over 10,000 people (pretty much every modern day hypnotist in the world). I have spoken to world class businesses organisations, goverments, and neuroscientific departments regarding hypnosis, NLP, and psychology. </p>
-    </li>
-
-    <li class="year">2008</li>
-    <li class="event offset-first">
-      <p>Became <b>Lead Instructor & Web marketing </b> for <b>GetMeTheGirl</b> a leading PUA company in the UK - as a side business to my full time Street Hypnosis Ltd Business. </p>
-    </li>
-    
-
-    <li class="year">2006</li>
-    <li class="event offset-first">
-      <p>Became <b>Firewalk Instructor and NLP Workshop Deliverer.</b>as  <b>Sole Trader ('Vince Lynch')</b> Delivered over 50 workshops in my first YEAR!</p>
-    </li>
-
-
-
-    <li class="year">2004</li>
-    <li class="event offset-first">
-      <p>Began working as  <b>Hypnotherapy & Hypnosis.</b> training instructor on behalf of other Hypnosis & NLP Training certification bodies.</p>
-    </li>
-
-
-  <li class="year">2003</li>
-  <li class="event offset-first">
-    <p>Launched my Hypnosis Business </p>
-  </li>
-  
-</ul>
-
-</main>
-
-<div class="sideright col-md-3"></div>
- -->
-</body>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./assets/ie10-viewport-bug-workaround.js"></script>
+    <script src="./assets/scrolling-links.js"></script>
+  </body>
 </html>
+
+
+
+
+
+
