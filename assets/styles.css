@@ -13,10 +13,16 @@ body {
 {
     overflow-x:scroll;
     overflow-y:hidden;
-    height:320px;
+    height:280px;
     width:100%;
     padding: 0 15px;
     margin-bottom: 70px;
+}
+
+selected {
+  margin-top: 5px;
+  margin-bottom: 120px;
+  padding-bottom: 30px;
 }
 
 .DocumentItem

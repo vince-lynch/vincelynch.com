@@ -33,7 +33,7 @@
 
   </head>
 
-  <body>
+  <body ng-app="VinceApp">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -77,18 +77,32 @@
       </div>
     </section>
 
-<section id="portfolio"  ng-controller="AppCtrl as ctrl" ng-cloak="" ng-app="VinceApp"> 
-<h2>PORTFOLIO</h2>
+<section id="portfolio"  ng-controller="AppCtrl as ctrl" ng-cloak=""> 
+<h2 ng-click="ctrl.helloworld()">PORTFOLIO</h2>
 <hr>
   <div >
   <block class="col-md-1"></block>
   <container class="col-md-10">
-    <div class="DocumentList">
+
+<selected ng-show="ctrl.selectedProject" class="container">
+  <h1>{{ctrl.selectedProject.title}}</h1>
+  <div class="col-md-6">
+  <img ng-src="{{ctrl.selectedProject.image}}" style="display: inline-block;" width="100%">
+  </div>
+  <div class="col-md-6">
+  <p>{{ctrl.selectedProject.desc}}</p>
+  </div>
+  <a href="{{ctrl.selectedProject.heroku}}" target='_blank' class="btn btn-default" role="button">Demo</a>
+  <a href="{{ctrl.selectedProject.github}}" target='_blank' class="btn btn-default" role="button">GitHub</a></li>
+  <button ng-click="ctrl.selectedProject = false">Back to all projects</button>
+  <hr>
+</selected>
+
+    <div class="DocumentList" ng-hide="ctrl.selectedProject">
         <ul class="list-inline">
-            <li ng-repeat="item in ctrl.items" class="DocumentItem">
-            <h6>{{item.desc}}</h6>
-             <img ng-src="{{item.image}}" width="190px" height="190px"> <br></br>  <a href="{{item.heroku}}" target='_blank' class="btn btn-default" role="button">Demo</a>
-            <a href="{{item.github}}" target='_blank' class="btn btn-default" role="button">GitHub</a></li>
+            <li ng-repeat="item in ctrl.items"  ng-click="ctrl.selectProject(item)" class="DocumentItem">
+            <h6 >{{item.title}}</h6>
+             <img ng-src="{{item.image}}" width="190px" height="190px"> <br></br>  
 
             <li class="DocumentItem">
                 <span>Test Data1</span>
