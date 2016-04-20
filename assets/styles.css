@@ -4,6 +4,73 @@ body {
   text-size: 18px;
   font-family: 'Quattrocento', serif;
 }
+
+.logoCol img {
+  width: 100px;
+}
+
+.DocumentList
+{
+    overflow-x:scroll;
+    overflow-y:hidden;
+    height:320px;
+    width:100%;
+    padding: 0 15px;
+    margin-bottom: 70px;
+}
+
+.DocumentItem
+{
+    /*border:1px solid black;*/
+    padding:20px;
+    height:300px;
+    padding: 20px;
+    margin-bottom: 70px;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+  background: white;
+  /*background: #1abc9c;*/
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0066CC;
+  border-radius: 7.5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0066CC;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #0066CC;
+}
+
+::-webkit-scrollbar-corner {
+  background: #0066CC;
+}
+
+::-webkit-resizer {
+  background: #0066CC;
+}
+
+
+.list-inline {
+  white-space:nowrap;
+}
+
+
+.spin {
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+  transition: transform .8s ease-in-out;
+}
+.spin:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+
 .profile-header {
   padding: 40px 15px;
   text-align: center;

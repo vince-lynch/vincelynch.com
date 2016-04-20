@@ -9,7 +9,17 @@
     <meta name="author" content="">
     <link rel="icon" href="./assets/favicon.ico">
 
-    <title>Vince Lynch - Web Developer</title>
+    <title>Vince Lynch - Web & Psychology</title>
+
+    <!-- External JS libraries -->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script> 
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+   <!-- Angular Material Library -->
+   <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+   <script src="http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -21,16 +31,6 @@
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
 
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="./js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -50,6 +50,7 @@
           <ul class="nav navbar-nav">
             <li><a data-toggle="collapse" data-target=".navbar-collapse" class="scroll-link" href="#" data-id="about">About</a></li>
             <li><a data-toggle="collapse" data-target=".navbar-collapse" class="scroll-link" href="#" data-id="portfolio">Portfolio</a></li>
+            <li><a data-toggle="collapse" data-target=".navbar-collapse" class="scroll-link" href="#" data-id="technologies">Technologies</a></li>
             <li><a data-toggle="collapse" data-target=".navbar-collapse" class="scroll-link" href="#" data-id="career">Career</a></li>
             <li><a data-toggle="collapse" data-target=".navbar-collapse" class="scroll-link" href="#" data-id="contact">Contact</a></li>
           </ul>
@@ -60,7 +61,7 @@
     <header>
       <div class="container">
         <div class="profile-header">
-          <img src="./assets/images/profile_photo.jpg" alt="profile-picture">
+          <img class="spin" src="./assets/images/profile_photo.jpg" alt="profile-picture">
           <h1>VINCE LYNCH</h1>
           <p class="lead">Web Developer</p>
         </div>
@@ -70,77 +71,121 @@
     <section id="about" class="container about">
       <h2>ABOUT ME</h2>
       <div class="about-text-border">
-        <p>A psychology & business with ten years experience working in psychology & communication workshops and web content. I'm currently looking for a Web Development role that intergrates my previous Affiliate Marketing experience in London/Lisbon.</p>
-        <p>After studying a part-time course Digital Marketing at Westminster University earlier last year, I took a three-month career break in December to do GA Web Development Immersive course.</p>
-        <p>Twelve weeks later I'm amazed by how much I've learnt in such a short space of time. I am now looking for a junior web development role so that I can develop my career.</p>
+        <p>I am a full stack developer specialising in all things JavaScript proficient in Node.js, Angular, jQuery, _lowdash, + getting familar with React & Ionic!</p>
+        <p>My interests are in Data science made meaningful through the use of web technologies, using PhantomJS for Web Scraping and D3.js for advanced charts & diagrams.</p>
+        <p>I also have a keen passion for Psychology & Philosophy and have operated numerous businesses in this space. I believe the way we interact with technology is a reflection of our inner selves.</p> 
       </div>
     </section>
 
+<section id="portfolio"  ng-controller="AppCtrl as ctrl" ng-cloak="" ng-app="VinceApp"> 
 <h2>PORTFOLIO</h2>
-  <div class="row portfolio-row1">
-    <section id="portfolio" class="container portfolio col-md-10 col-md-offset-2">
-      
-      <div class="project-panel col-md-5">
-        <div class="thumbnail">
-          <img src="./assets/images/outease.png" alt="Outease - city choosing app">
-          <div class="caption">
-            <h3>Outease</h3>
-            <p>Explore the perfect city to live based on liberal criteria, browsing cities by the cost of living, coffee price, beer price & liberal policies. Built using Angular, Node.js and Express and using the Instagram API + Phantom JS Scraping techniques.</p>
-            <p>
-              <a href="https://stormy-coast-88459.herokuapp.com/#/" target='_blank' class="btn btn-default" role="button">Demo</a>
-              <a href="https://github.com/error25/Project_4" target='_blank' class="btn btn-default" role="button">GitHub</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="project-panel col-md-5">
-        <div class="thumbnail">
-          <img src="./assets/images/faceoff.png" alt="Greenhub Screenshot">
-          <div class="caption">
-            <h3>Faceoff</h3>
-            <p>Angular based app. Built during Hackathon using Google Cloud Vision to do Face Recognition and put silly hats, beards, glasses, and mustache's on yourself. Works on Mobile! Node.js backend with Angular frontend.</p>
-            <p>
-              <a href="https://fierce-cove-17578.herokuapp.com/" target='_blank' class="btn btn-default" role="button">Demo</a>
-              <a href="https://github.com/vince-lynch/faceoff" target='_blank' class="btn btn-default" role="button">GitHub</a>
-            </p>
-          </div>
-        </div>
-      </div>
+<hr>
+  <div >
+  <block class="col-md-1"></block>
+  <container class="col-md-10">
+    <div class="DocumentList">
+        <ul class="list-inline">
+            <li ng-repeat="item in ctrl.items" class="DocumentItem">
+            <h6>{{item.desc}}</h6>
+             <img ng-src="{{item.image}}" width="190px" height="190px"> <br></br>  <a href="{{item.heroku}}" target='_blank' class="btn btn-default" role="button">Demo</a>
+            <a href="{{item.github}}" target='_blank' class="btn btn-default" role="button">GitHub</a></li>
+
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+        </ul>
+     </container>   
+    </div>
+    </div>  
     </section>
-  </div>
-  <div class="row">
-    <section id="portfolio" class="container portfolio col-md-10 col-md-offset-2">
-      <div class="project-panel col-md-5">
-        <div class="thumbnail">
-          <img src="./assets/images/worldbynumbers.png" alt="World by numbers Screenshot">
-          <div class="caption">
-            <h3>World By Numbers</h3>
-            <p>Ruby on Sinatra & Frontend jQuery with D3 Visualisations.</p>
-            <p>
-              <a href="https://damp-wave-98027.herokuapp.com/" target="_blank" class="btn btn-default" role="button">Demo</a>
-              <a href="https://github.com/error25/WDI_PROJECT2" target="_blank" class="btn btn-default" role="button">GitHub</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="project-panel col-md-5">
-        <div class="thumbnail">
-          <img src="./assets/images/overheardscreenshot.png" alt="Overheard timeout quiz">
-          <div class="caption">
-            <h3>Overheard</h3>
-            <p>Scrollable parallax jQuery-Based Trivia game-idea for TimeOut London.</p>
-            <p>
-              <a href="https://pacific-ravine-78310.herokuapp.com/" target="_blank" class="btn btn-default" role="button">Demo</a>
-              <a href="https://github.com/error25/WDI_PROJECT1" target="_blank" class="btn btn-default" role="button">GitHub</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+    <block class="col-md-1"></block>
+  <hr>
+  <p>
+  </p>
 
 
+  <section id="technologies" class="container technologies">
+  <h2>TECHNOLOGIES</h2>
+  <ul class="list-inline row">
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="http://svgporn.com/logos/javascript.svg" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="http://www.wouter-rikken.nl/img/technieken/jquery-logo.png" class="languageLogo"/></div></li>
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="http://jmlevick.appspot.com/img/nodejs-logo.png" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="http://nodejs-cloud.com/img/128px/expressjs.png" class="languageLogo"/></div></li>
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="http://dangayle.com.s3.amazonaws.com/uploads/logo-square.png" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="http://svgporn.com/logos/angular-icon.svg" class="languageLogo"/></div></li>
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="http://svgporn.com/logos/css-3_official.svg" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="https://www.w3.org/html/logo/downloads/HTML5_Badge_256.png" class="languageLogo"/></div></li>
+       </ul>
+       <ul class="list-inline row">
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="http://svgporn.com/logos/rubygems.svg" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="http://www.justinschulz.me/assets/img/rails.png" class="languageLogo"/></div></li>
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="http://svgporn.com/logos/sinatra.svg" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="http://imasters.expert/wp-content/uploads/2015/04/mysql.png" class="languageLogo"/></div></li>
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="https://camo.githubusercontent.com/431283cc1643d02167aac31067137897507c60fc/687474703a2f2f636861696a732e636f6d2f696d672f636861692d6c6f676f2e706e67" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="https://avatars0.githubusercontent.com/u/8770005?v=3&s=400" class="languageLogo"/></div></li>
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="http://assets.codecloudapp.com/sites/562956d86e6f640de4000000/image/png/1443470789000/github-512.png" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="https://jwt.io/img/logo.svg" class="languageLogo" id="jwtLogo"/></div></li>
+       </ul>
 
+  </section>
 
 
 
@@ -151,7 +196,7 @@
       <ul class="timeline">
         <li>
           <div class="timeline-badge">
-            <img class='timeline-logo' src="./assets/images/ga_cog.jpg" alt="GA logo">
+            <img class='timeline-logo spin'  src="./assets/images/ga_cog.jpg" alt="GA logo">
           </div>
           <div class="timeline-panel">
             <div class="timeline-heading">
@@ -165,7 +210,7 @@
         </li>
         <li class="timeline-inverted">
           <div class="timeline-badge">
-            <img class='timeline-logo' src="./assets/images/dmi.png" alt="Digital marketing institute @ University of Westminster logo">
+            <img class='timeline-logo spin'  src="./assets/images/dmi.png" alt="Digital marketing institute @ University of Westminster logo">
           </div>
           <div class="timeline-panel">
             <div class="timeline-heading">
@@ -178,7 +223,7 @@
           </div>
         </li>
         <li>
-          <div class="timeline-badge"><img class='timeline-logo' src="./assets/images/bf8circle.png" alt="BF8 logo"></div>
+          <div class="timeline-badge"><img class='timeline-logo spin' src="./assets/images/bf8circle.png" alt="BF8 logo"></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
               <h4 class="timeline-title">Affiliate Marketer, BF8 Media ltd</h4>
@@ -191,7 +236,7 @@
           </div>
         </li>
         <li class="timeline-inverted">
-          <div class="timeline-badge"><img class='timeline-logo iop-logo' src="./assets/images/googlecirclelogo.png" alt="Google logo"></div>
+          <div class="timeline-badge"><img class='timeline-logo iop-logo spin' src="./assets/images/googlecirclelogo.png" alt="Google logo"></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
               <h4 class="timeline-title">Google Field Manager / Google via TRO Agency</h4>
@@ -203,7 +248,7 @@
           </div>
         </li>
         <li>
-          <div class="timeline-badge"><img class='timeline-logo iop-logo' src="./assets/images/daily-mail-logo.jpg" alt="Daily Mail Logo"></div>
+          <div class="timeline-badge"><img class='timeline-logo iop-logo spin' src="./assets/images/daily-mail-logo.jpg" alt="Daily Mail Logo"></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
               <h4 class="timeline-title">Daily Mail - Internet Marketing Consultant</h4>
@@ -215,7 +260,7 @@
           </div>
         </li>
         <li class="timeline-inverted">
-          <div class="timeline-badge"><img class='timeline-logo iop-logo' src="./assets/images/streethypnosislogo.png" alt="Street Hypnosis logo"></div>
+          <div class="timeline-badge"><img class='timeline-logo iop-logo spin' src="./assets/images/streethypnosislogo.png"  alt="Street Hypnosis logo"></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
               <h4 class="timeline-title">Street Hypnosis Ltd et al / Hypnotist & NLP Workshop Producer.</h4>
@@ -227,7 +272,7 @@
           </div>
         </li>
         <li>
-          <div class="timeline-badge"><img class='timeline-logo iop-logo' src="./assets/images/royalhollowaylogo.jpg" alt="Royal Holloway Logo"></div>
+          <div class="timeline-badge"><img class='timeline-logo iop-logo spin' src="./assets/images/royalhollowaylogo.jpg" alt="Royal Holloway Logo"></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
               <h4 class="timeline-title">Royal Holloway, Master’s Degree, Business Administration and Management, General, 2:1</h4>
@@ -239,7 +284,7 @@
           </div>
         </li>
         <li class="timeline-inverted">
-          <div class="timeline-badge"><img class='timeline-logo iop-logo' src="./assets/images/lselogo.gif" alt="London School of Economics logo"></div>
+          <div class="timeline-badge"><img class='timeline-logo iop-logo spin' src="./assets/images/lselogo.gif"   alt="London School of Economics logo"></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
               <h4 class="timeline-title">The London School of Economics and Political Science (LSE) Business (Summer) School</h4>
@@ -251,7 +296,7 @@
           </div>
         </li>
         <li>
-          <div class="timeline-badge"><img class='timeline-logo iop-logo' src="./assets/images/leedsunilogo.gif" alt="University of Leeds Logo"></div>
+          <div class="timeline-badge"><img class='timeline-logo iop-logo spin' src="./assets/images/leedsunilogo.gif"  alt="University of Leeds Logo"></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
               <h4 class="timeline-title">University of Leeds Bachelor’s Degree, Psychology, 2:1  Specialising in Psychotherapy & Counselling.</h4>
@@ -263,7 +308,7 @@
           </div>
         </li>
         <li class="timeline-inverted">
-          <div class="timeline-badge"><img class='timeline-logo iop-logo' src="./assets/images/turtleandelephantcomputers.jpg" alt="Turtle & Elephant computers logo"></div>
+          <div class="timeline-badge"><img class='timeline-logo iop-logo spin' src="./assets/images/turtleandelephantcomputers.jpg" alt="Turtle & Elephant computers logo"></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
               <h4 class="timeline-title">TEC Computers / Web & Technical Apprentic</h4>
@@ -301,6 +346,9 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./assets/ie10-viewport-bug-workaround.js"></script>
     <script src="./assets/scrolling-links.js"></script>
+    <script src="./assets/angularapp.js"></script>
+    <script type="text/javascript" src="
+https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.11.1/lodash.js"></script>
   </body>
 </html>
 <!-- edit -->
