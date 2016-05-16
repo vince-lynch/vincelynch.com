@@ -17,7 +17,7 @@
           console.log("hello world")
         }
 
-        this.items = [
+        this.items = [{title: 'Machine Learning Demo', image:'./assets/images/machinelearningdemo.png', github:'https://github.com/vince-lynch/machinelearningtests', heroku: 'https://nameless-caverns-86688.herokuapp.com/', desc: 'A Machine Learning demonstration I made in ConvNetJS (Deep Q Learning in the browser)'},
         {title: 'Outeaze', image:'./assets/images/outease.png', github:'https://github.com/error25/Project_4', heroku: 'https://stormy-coast-88459.herokuapp.com/#/', desc: 'Explore the perfect city to live based on liberal criteria, browsing cities by the cost of living, coffee price, beer price & liberal policies. Built using Angular, Node.js and Express and using the Instagram API + Phantom JS Scraping techniques.'},
         {title: 'Faceoff', image:'./assets/images/faceoff2.png', heroku: "https://fierce-cove-17578.herokuapp.com/", github: "https://github.com/vince-lynch/faceoff", desc: 'Angular based app. Built during Hackathon using Google Cloud Vision to do Face Recognition and put silly hats, beards, glasses, and mustaches on yourself. Works on Mobile! Node.js backend with Angular frontend.'},
         {title: 'World By Numbers', image:'./assets/images/worldbynumbers.png', heroku: "https://damp-wave-98027.herokuapp.com/", github: "https://github.com/error25/WDI_PROJECT2", desc: 'Ruby on Sinatra & Frontend jQuery with D3 Visualisations.'},
