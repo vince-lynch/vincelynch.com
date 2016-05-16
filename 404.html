@@ -1,0 +1,373 @@
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./assets/favicon.ico">
+
+    <title>Vince Lynch - Web & Psychology</title>
+
+    <!-- External JS libraries -->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script> 
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+   <!-- Angular Material Library -->
+   <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+   <script src="http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="./assets/styles.css" rel="stylesheet">
+    <link href="./assets/timeline.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <body ng-app="VinceApp">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand scroll-top" href="#">VINCE LYNCH</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a data-toggle="collapse" data-target=".navbar-collapse" class="scroll-link" href="#" data-id="about">About</a></li>
+            <li><a data-toggle="collapse" data-target=".navbar-collapse" class="scroll-link" href="#" data-id="portfolio">Portfolio</a></li>
+            <li><a data-toggle="collapse" data-target=".navbar-collapse" class="scroll-link" href="#" data-id="technologies">Technologies</a></li>
+            <li><a data-toggle="collapse" data-target=".navbar-collapse" class="scroll-link" href="#" data-id="career">Career</a></li>
+            <li><a data-toggle="collapse" data-target=".navbar-collapse" class="scroll-link" href="#" data-id="contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <header>
+      <div class="container">
+        <div class="profile-header">
+          <img class="spin" src="./assets/images/profile_photo.jpg" alt="profile-picture">
+          <h1>VINCE LYNCH</h1>
+          <p class="lead">Web Developer</p>
+        </div>
+      <div>  
+    </header>
+
+    <section id="about" class="container about">
+      <h2>ABOUT ME</h2>
+      <div class="about-text-border">
+        <p>I am a full stack developer specialising in all things JavaScript proficient in Node.js, Angular, jQuery, _lowdash, + getting familar with React & Ionic!</p>
+        <p>From my experience working as an Affiliate Marketer I have become passionate about Data science - using my skills as a Technologist to make the information meaningful through the use of web technologies, using PhantomJS for Web Scraping and D3.js for advanced charts & diagrams.</p>
+        <p>I also have a keen passion for Psychology & Philosophy and have operated numerous businesses in this space. I believe the way we interact with technology is a reflection of our inner selves.</p> 
+      </div>
+    </section>
+
+<section id="portfolio"  ng-controller="AppCtrl as ctrl" ng-cloak=""> 
+<h2 ng-click="ctrl.helloworld()">PORTFOLIO</h2>
+<hr>
+  <div >
+  <block class="col-md-1"></block>
+  <container class="col-md-10">
+
+<selected ng-show="ctrl.selectedProject" class="container">
+  <h1>{{ctrl.selectedProject.title}}</h1>
+  <div class="col-md-6">
+  <img ng-src="{{ctrl.selectedProject.image}}" style="display: inline-block;" width="100%">
+  </div>
+  <div class="col-md-6">
+  <p>{{ctrl.selectedProject.desc}}</p>
+  </div>
+  <a href="{{ctrl.selectedProject.heroku}}" target='_blank' class="btn btn-default" role="button">Demo</a>
+  <a href="{{ctrl.selectedProject.github}}" target='_blank' class="btn btn-default" role="button">GitHub</a></li>
+  <button type="button" class="btn btn-primary" ng-click="ctrl.selectedProject = false">Back to all projects</button>
+  <hr>
+</selected>
+
+    <div class="DocumentList" ng-hide="ctrl.selectedProject">
+        <ul class="list-inline">
+            <li ng-repeat="item in ctrl.items"  ng-click="ctrl.selectProject(item)" class="DocumentItem">
+            <h6 >{{item.title}}</h6>
+             <img ng-src="{{item.image}}" width="190px" height="190px"> <br></br>  
+
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+            <li class="DocumentItem">
+                <span>Test Data1</span>
+            </li>
+        </ul>
+     </container>   
+    </div>
+    </div>  
+    </section>
+    <block class="col-md-1"></block>
+  <hr>
+  <p>
+  </p>
+
+
+  <section id="technologies" class="container technologies">
+  <h2>TECHNOLOGIES</h2>
+  <ul class="list-inline row">
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="http://svgporn.com/logos/javascript.svg" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="http://www.wouter-rikken.nl/img/technieken/jquery-logo.png" class="languageLogo"/></div></li>
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="http://jmlevick.appspot.com/img/nodejs-logo.png" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="http://nodejs-cloud.com/img/128px/expressjs.png" class="languageLogo"/></div></li>
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="http://dangayle.com.s3.amazonaws.com/uploads/logo-square.png" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="http://svgporn.com/logos/angular-icon.svg" class="languageLogo"/></div></li>
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="http://svgporn.com/logos/css-3_official.svg" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="https://www.w3.org/html/logo/downloads/HTML5_Badge_256.png" class="languageLogo"/></div></li>
+       </ul>
+       <ul class="list-inline row">
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="http://svgporn.com/logos/rubygems.svg" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="http://www.justinschulz.me/assets/img/rails.png" class="languageLogo"/></div></li>
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="http://svgporn.com/logos/sinatra.svg" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="http://imasters.expert/wp-content/uploads/2015/04/mysql.png" class="languageLogo"/></div></li>
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="https://camo.githubusercontent.com/431283cc1643d02167aac31067137897507c60fc/687474703a2f2f636861696a732e636f6d2f696d672f636861692d6c6f676f2e706e67" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="https://avatars0.githubusercontent.com/u/8770005?v=3&s=400" class="languageLogo"/></div></li>
+         <li class="col-sm-3"><div class="col-sm-6 logoCol"><img src="http://assets.codecloudapp.com/sites/562956d86e6f640de4000000/image/png/1443470789000/github-512.png" class="languageLogo"/></div><div class="col-sm-6 logoCol"><img src="https://jwt.io/img/logo.svg" class="languageLogo" id="jwtLogo"/></div></li>
+       </ul>
+
+  </section>
+
+
+
+    <section id="career" class="container career">
+      <div class="timeline-header page-header">
+        <h2>CAREER</h2>
+      </div>
+      <ul class="timeline">
+        <li>
+          <div class="timeline-badge">
+            <img class='timeline-logo spin'  src="./assets/images/ga_cog.jpg" alt="GA logo">
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">General Assembly: Web Development Immersive</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i> August - Nov 2015 </p>
+            </div>
+            <div class="timeline-body">
+              <p>12 week intensive course to build coding skills and fluency in full stack web development • Learned Ruby, Rails, JavaScript/jQuery, HTML, CSS and SQL, with working knowledge in many other languages, frameworks and web development processes • 90+ hours a week developing web apps while collaborating and receiving feedback from professionals. One of the most rewarding and intense experiences of my life so far. It confirmed for me that I really love coding and want to use my abilities to further my career</p>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge">
+            <img class='timeline-logo spin'  src="./assets/images/dmi.png" alt="Digital marketing institute @ University of Westminster logo">
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Digital Marketing Institute 10 week part-time course: Digital Marketing</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i> August 2015 - November 2015 </p>
+            </div>
+            <div class="timeline-body">
+              <p>An in-depth course covering SEO, PPC, Display, Analytics and Email Marketing, using the relevant tools, Google Adwords/Facebook Advertising etc.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge"><img class='timeline-logo spin' src="./assets/images/bf8circle.png" alt="BF8 logo"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Affiliate Marketer, BF8 Media ltd</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i> 2013 - 2015 </p>
+            </div>
+            <div class="timeline-body">
+              <p>BF8 is an affiliate marketing company, mainly responsible for media buying / managing the campaigns for larger affiliates<!--  ~ We were running large amounts of traffic for between 5-10% of profit -->. We specialise in <!-- Health & Wellbeing products and Skincare / Anti-aging but also --> a variety of <!-- other --> affiliate campaigns.</p>
+              <p>When I joined the company <!-- in December 2013 --> <!-- affiliate marketing --> I was mainly responsible for managing the traffic for larger affiliates, became the main source of revenue for the company. Most of the offers we got from Peerfly, Adxmi, F5Media, ShareaSale. I was primarily responsible for landing page creation, ads/banners/Facebook and campaign optimisation.</p><p>My day to day included: Working primarily with Facebook ~ Analysing Social Traffic, Excel/Spreadsheet management/Managing Outsources/Elance/etc, <!-- Affiliate marketing within the Diet / Health and Fitness niche, --> Managing multiple accounts, ad campaigns, finding new offers, split testing, running multiple versions of ads through Qwaya, building landing pages, article sites, and increasing conversions.</p>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge"><img class='timeline-logo iop-logo spin' src="./assets/images/googlecirclelogo.png" alt="Google logo"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Google Field Manager / Google via TRO Agency</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i> 2004 - 08 </p>
+            </div>
+            <div class="timeline-body">
+              <p>Worked on behalf of Google as a Manager, involved in setting up Google stores within stores across the UK and educating businesses/education & consumers about Google products @ Trade Shows, Training days and instores. Managed a team of 10 Google trained specialists.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge"><img class='timeline-logo iop-logo spin' src="./assets/images/daily-mail-logo.jpg" alt="Daily Mail Logo"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Daily Mail - Internet Marketing Consultant</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i> 2012 - 2013</p>
+            </div>
+            <div class="timeline-body">
+              <p>I took this role to develop business skills that involved selling Search Engine Optimisation, Display Advertising and Search Advertising to medium size businesses.</p>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge"><img class='timeline-logo iop-logo spin' src="./assets/images/streethypnosislogo.png"  alt="Street Hypnosis logo"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Street Hypnosis Ltd et al / Hypnotist & NLP Workshop Producer.</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i> 2003 - 2012</p>
+            </div>
+            <div class="timeline-body">
+              <p>Founded a new movement in hypnotism, NLP, Firewalking, PUA, and motivational psychology that later became known as the ‘Street Hypnosis Movement’ built websites, forums, newsletters, joint-ventures, affiliate marketing campaigns, physical training courses in over 45 cities around the world, lectured to thousands of people and taught over 10,000 new hypnotists over a ten year period..</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge"><img class='timeline-logo iop-logo spin' src="./assets/images/royalhollowaylogo.jpg" alt="Royal Holloway Logo"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Royal Holloway, Master’s Degree, Business Administration and Management, General, 2:1</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i>September 2009 - October 2010</p>
+            </div>
+            <div class="timeline-body">
+              <p>Modules included: Global Economics, Marketing, Strategy, Philosophy of Management, Global Investment, Financial Accounting, HR, IT, Corp Finance, Entrepreneurship, Global Financial Markets, Business Analysis. Accredited by the Association of MBA’s</p>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge"><img class='timeline-logo iop-logo spin' src="./assets/images/lselogo.gif"   alt="London School of Economics logo"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">The London School of Economics and Political Science (LSE) Business (Summer) School</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i> June 2009 - August 2009</p>
+            </div>
+            <div class="timeline-body">
+              <p>Modules included: Strategic Management,Entrepreneurship and Global Leadership..</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge"><img class='timeline-logo iop-logo spin' src="./assets/images/leedsunilogo.gif"  alt="University of Leeds Logo"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">University of Leeds Bachelor’s Degree, Psychology, 2:1  Specialising in Psychotherapy & Counselling.</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i>September 2006 - May 2009</p>
+            </div>
+            <div class="timeline-body">
+              <p> </p>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge"><img class='timeline-logo iop-logo spin' src="./assets/images/turtleandelephantcomputers.jpg" alt="Turtle & Elephant computers logo"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">TEC Computers / Web & Technical Apprentic</h4>
+              <p><i class="glyphicon glyphicon-calendar"></i> FEBRUARY 2002 - MARCH 2003</p>
+            </div>
+            <div class="timeline-body">
+              <p>Joomla, PHP, Basic Websites for Small businesses, and technical support with computers...</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+
+    <section id="contact" class="container contact">
+      <h2>CONTACT</h2>
+      <p class='lead'>autovincelynch@gmail.com</p>
+      <ul class="list-inline social-buttons">
+        <li>
+          <a href="https://github.com/error25" target="_blank"><i class="fa fa-github"></i></a>
+        </li>
+        <li>
+          <a href="http://uk.linkedin.com/in/vince_lynch" target="_blank"><i   class="fa fa-linkedin "></i></a>
+        </li>
+      </ul>
+    </section>
+
+    <footer></footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./assets/ie10-viewport-bug-workaround.js"></script>
+    <script src="./assets/scrolling-links.js"></script>
+    <script src="./assets/angularapp.js"></script>
+    <script type="text/javascript" src="
+https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.11.1/lodash.js"></script>
+  </body>
+</html>
+<!-- edit -->
+
+
+
+
+
