@@ -1,5 +1,6 @@
 //https://scotch.io/tutorials/setting-up-a-mean-stack-single-page-application
-angular.module('VinceLynch', []).factory('FeedFactory', ['$http', function($http) {
+angular.module('VinceApp')
+.factory('FeedFactory', ['$http', function($http) {
 
     return {
         get : function() {

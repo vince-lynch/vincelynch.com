@@ -1,5 +1,18 @@
-angular.module('VinceLynch')
-.controller('AppCtrl', function() {
+
+angular.module('VinceApp')
+.controller('AppCtrl',AppCtrl);
+
+AppCtrl.$inject = ['FeedFactory'];
+function AppCtrl(FeedFactory) {
+
+var Feed = FeedFactory.get().then(function successCallback(response) {
+    return console.log(response);
+  }, function errorCallback(response) {
+   console.log(response);
+  });
+
+
+
 
     self = this;
     this.items = [];
@@ -32,4 +45,4 @@ angular.module('VinceLynch')
 
 
     console.log(self.items)
-  });
+  };
