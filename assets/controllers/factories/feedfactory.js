@@ -4,7 +4,7 @@ angular.module('VinceApp')
 
     return {
         get : function() {
-            return $http.get('https://powerful-shelf-87419.herokuapp.com/api/feed');
+            return $http.jsonp('https://powerful-shelf-87419.herokuapp.com/api/feed');
         },
 
 
