@@ -8,22 +8,13 @@ var Feed = require('./models/feed');
           res.render('index');
         });
 
-        ///////////// Scrape etc.
-      app.post('/poststatus', function(req, res) {
-        var preview = require("page-previewer");
-        preview(req.body.link, function(err, data) {
-          if(!err) {
-            console.log(data);
-            if (req.body.link.indexOf("youtube") === -1){
-              res.jsonp(data); //Prints the meta data about the page 
-            } else {
-              var youtubeID = req.body.link.split("v=")[1];
-              data.embed = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + youtubeID + '" frameborder="0" allowfullscreen></iframe>'
-            }
-          }
+        // Feed
+        app.get('/feed', function(req, res, next) {
+          res.render('feed');
         });
-      });
 
+
+        /////////////
         // QUERY
         app.get('/api/feed', function(req, res) {
             Feed.find(function(err, feed) {
