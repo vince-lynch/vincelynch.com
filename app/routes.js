@@ -15,10 +15,19 @@ var Feed = require('./models/feed');
           if(!err) {
             console.log(data);
             if (req.body.link.indexOf("youtube") === -1){
-              res.jsonp(data); //Prints the meta data about the page 
+              var status = new Feed({status: data});
+              status.save(function(err) {
+                if(err) res.status(500).send(err);
+                res.jsonp(data); //Prints the meta data about the page
+              });
             } else {
-              var youtubeID = req.body.link.split("v=")[1];
-              data.embed = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + youtubeID + '" frameborder="0" allowfullscreen></iframe>'
+              var youtubeID = req.body.link.split("v=")[1].split("&")[0];
+              data.embed = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + youtubeID + '" frameborder="0" allowfullscreen></iframe>';
+              var status = new Feed({status: data});
+              status.save(function(err) {
+                if(err) res.status(500).send(err);
+                res.jsonp(data);
+              });
             }
           }
         });

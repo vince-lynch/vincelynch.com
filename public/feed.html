@@ -1,3 +1,17 @@
 
+<h1>FEED</h1>
+<main ng-controller="AppCtrl as ctrl">
 
-    <h1>FEED</h1>
+<input ng-model="statusupdate"/>
+<button ng-click="postStatus()"></button>
+
+<!-- http://blog.timsommer.be/using-ngsanitize-to-render-html-strings-in-angular/ -->
+<ul ng-repeat="item in feed">
+  <li>{{ item.status.title }}</br>{{ item.status.description
+ }}</br><img ng-src="{{item.status.images[0]}}" width="200px" alt="Description"/>
+ <p ng-bind-html="embedCode(item.status.embed)"></p></li>
+
+</ul>
+
+
+</main>

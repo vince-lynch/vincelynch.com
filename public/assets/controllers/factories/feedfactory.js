@@ -9,13 +9,14 @@ angular.module('VinceApp')
 
 
         create : function(status) {
-            return $http.post('/api/feed', status);
+            return $http.post('/poststatus', status);
         },
 
         // call to DELETE a nerd
         delete : function(id) {
             return $http.delete('/api/feed' + id);
         }
+
     }       
 
 }]);

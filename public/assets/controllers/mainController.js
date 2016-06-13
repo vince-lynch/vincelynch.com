@@ -2,16 +2,36 @@
 angular.module('VinceApp')
 .controller('AppCtrl',AppCtrl);
 
-AppCtrl.$inject = ['FeedFactory'];
-function AppCtrl(FeedFactory) {
+AppCtrl.$inject = ['FeedFactory', '$scope', '$sce'];
+function AppCtrl(FeedFactory, $scope, $sce) {
 
-var Feed = FeedFactory.get().then(function successCallback(response) {
-    return console.log(response);
+$scope.feed = [];
+
+// CUSTOM Directive to render as HTML
+$scope.myHTML = 'I am an <code>HTML</code>string with ' +
+     '<a href="#">links!</a> and other <em>stuff</em>';
+
+$scope.embedCode = function(embed){
+  return $sce.trustAsHtml(embed);
+}
+
+var Feed = FeedFactory.get()
+.then(function successCallback(response) {
+    console.log(response);
+    $scope.feed = response.data;
   }, function errorCallback(response) {
    console.log(response);
   });
 
+$scope.statusupdate = "";
 
+$scope.postStatus = function(){
+  FeedFactory.create({link: $scope.statusupdate}).then(function successCallback(response) {
+    console.log(response);
+  }, function errorCallback(response) {
+   console.log(response);
+  });
+}
 
 
     self = this;

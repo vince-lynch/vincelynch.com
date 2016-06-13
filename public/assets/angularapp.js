@@ -1,4 +1,4 @@
-angular.module('VinceApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache','ui.router'])
+angular.module('VinceApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache','ui.router','ngSanitize'])
   .config(Router);
 
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
