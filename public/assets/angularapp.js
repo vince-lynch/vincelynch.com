@@ -16,6 +16,10 @@ function Router($stateProvider, $urlRouterProvider){
       url: '/', 
       templateUrl: 'portfolio.html'
     })
+    .state('login',{
+      url: '/login',
+      templateUrl: 'login.html'
+    })
     .state('feed',{
       url: '/feed',
       templateUrl: 'feed.html'

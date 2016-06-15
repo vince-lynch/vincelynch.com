@@ -1,6 +1,6 @@
 angular
   .module('VinceApp')
-  .controller('usersController', UsersController)
+  .controller('UsersController', UsersController)
 
 UsersController.$inject = ['User','tokenService']
 function UsersController(User, tokenService) {
