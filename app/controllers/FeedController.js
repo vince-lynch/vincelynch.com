@@ -1,4 +1,4 @@
-var Feed = require('./models/feed');
+var Feed = require('../models/feed');
 
 // POST
 function Create(req, res) {
@@ -48,7 +48,6 @@ function Create(req, res) {
 
 module.exports = {
   index: Index,
-  show: Show,
   create: Create,
   delete: Delete
 };

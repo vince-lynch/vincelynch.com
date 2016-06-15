@@ -1,5 +1,12 @@
-angular.module('VinceApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache','ui.router','ngSanitize'])
+angular.module('VinceApp',['ngMaterial', 'angular-jwt', 'ngMessages', 'material.svgAssetsCache','ui.router','ngSanitize'])
+  .config(InterceptorConfig)
   .config(Router);
+
+
+InterceptorConfig.$inject = ['$httpProvider'];
+  function InterceptorConfig($httpProvider){
+    $httpProvider.interceptors.push('AuthInterceptor');
+  };
 
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 function Router($stateProvider, $urlRouterProvider){

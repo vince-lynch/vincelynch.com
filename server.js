@@ -7,6 +7,7 @@ var morgan        = require('morgan');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var db = require('./config/db');
+var router = require('./app/routes');
 var port = process.env.PORT || 8080; 
 
 // connect to our mongoDB database 
@@ -29,9 +30,14 @@ app.set("view engine", "ejs");
 app.set("views", __dirname + "/public");
 app.use(express.static(__dirname + '/public')); 
 
-require('./app/routes.js')(app); // configure our routes
+// Statics
+//index
+/*app.get('/', function(req, res) {
+  res.render('index');
+});*/
 
-app.listen(port);  
+app.use('/', router);
 
-console.log('Magic happens on port ' + port);      
-exports = module.exports = app;   
+app.listen(port, function() {
+  console.log("Express is listening on port " + port);
+}); 
