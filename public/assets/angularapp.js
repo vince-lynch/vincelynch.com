@@ -58,3 +58,8 @@ js-bson: Failed to load c++ bson extension, using pure JS version*/
 
 // apparently linux, or EC2 or whatever has some kind of need for password protection on the database to be used 'remotely' even though I was using it locally, so had to set that up.
 
+
+// Not using Forever.js anymore for the Node.js server script, we are going to use nohup node server.js &
+
+
+
