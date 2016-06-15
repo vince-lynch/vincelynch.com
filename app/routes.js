@@ -2,6 +2,12 @@ var Feed = require('./models/feed');
 var User = require('../models/user');
 var jwt = require('jsonwebtoken');
 var secret = require('../config/tokens').secret;
+var router = require('express').Router();
+var jwt = require('jsonwebtoken');
+var usersController = require('/controllers/userController');
+var FeedController = require('/controllers/FeedController');
+var authenticationController = require('/controllers/authentication');
+var secret = require('../config/tokens').secret;
 
 // custom JWT middleware
 function secureRoute(req, res, next) {
@@ -16,6 +22,29 @@ function secureRoute(req, res, next) {
   });
 }
 
+router.route('/users')
+  .get(secureRoute, usersController.index);
+
+router.route('/users/:id')
+  .all(secureRoute)
+  .get(usersController.show)
+  .put(usersController.update)
+  .delete(usersController.delete);
+
+
+  router.route('/api/feed')
+    .get(FeedController.index);
+
+  router.route('/api/feed/:id')
+    .all(secureRoute)
+    .delete(FeedController.delete);
+
+router.route('/poststatus').post(FeedController.create)
+
+router.post('/register', authenticationController.register);
+router.post('/login', authenticationController.login);
+
+module.exports = router;
     module.exports = function(app) {
 
 
@@ -27,77 +56,29 @@ function secureRoute(req, res, next) {
           res.render('index');
         });
 
-        ///////////// Scrape etc.
-      app.post('/poststatus', function(req, res) {
-        var preview = require("page-previewer");
-        preview(req.body.link, function(err, data) {
-          if(!err) {
-            console.log(data);
-            if (req.body.link.indexOf("youtube") === -1){
-              var status = new Feed({status: data});
-              status.save(function(err) {
-                if(err) res.status(500).send(err);
-                res.jsonp(data); //Prints the meta data about the page
-              });
-            } else {
-              var youtubeID = req.body.link.split("v=")[1].split("&")[0];
-              data.embed = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + youtubeID + '" frameborder="0" allowfullscreen></iframe>';
-              var status = new Feed({status: data});
-              status.save(function(err) {
-                if(err) res.status(500).send(err);
-                res.jsonp(data);
-              });
-            }
-          }
-        });
-      });
+      
+  app.get('/users/:id', function(req, res) {
+     User.findById(req.params.id, function(err, user) {
+       if(err) return res.status(500).json({ message: err });
+       return res.status(200).json(user);
+     });
+   }
 
-        // QUERY
-        app.get('/api/feed', function(req, res) {
-            Feed.find(function(err, feed) {
-                if (err)
-                    res.send(err);
-                res.jsonp(feed); // return feed in JSON format
-            });
-        });
-        // POST
-        app.post('/api/feed', function(req, res) {
-            var status = new Feed(req.body);
-            status.save(function(err) {
-              if(err) res.status(500).send(err);
-              res.status(201).send(status);
-            });
-          });
-        // DELETE
-        app.delete('/api/feed/:id', function(req, res) {
-          var id = req.params.id;
-          Feed.remove({_id: id}, function(err) {
-            if(err) res.status(404).send(err);
-            res.status(204).send("successfully deleted");
-          }).select('-__v');
-        });
+   app.put('/users/:id', function(req, res) {
+     User.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, user) {
+       if(err) return res.status(500).json({ message: err });
+       return res.status(200).json(user);
+     });
+   }
 
-        
-    app.get('/users', function(req, res) {
+ app.get('/users', function(req, res) {
       User.find(function(err, users) {
         if(err) return res.status(500).json({ message: err });
         return res.status(200).json(users);
       });
     }
 
-    app.get('/users/:id', function(req, res) {
-      User.findById(req.params.id, function(err, user) {
-        if(err) return res.status(500).json({ message: err });
-        return res.status(200).json(user);
-      });
-    }
 
-    app.put('/users/:id', function(req, res) {
-      User.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, user) {
-        if(err) return res.status(500).json({ message: err });
-        return res.status(200).json(user);
-      });
-    }
 
     app.delete('/users/:id', function(req, res) {
       User.findByIdAndRemove(req.params.id, function(err) {
