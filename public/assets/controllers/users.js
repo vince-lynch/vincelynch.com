@@ -31,7 +31,7 @@ function UsersController(User, tokenService) {
   }
 
   self.register = function() {
-    User.register(self.currentUser, handleLogin);
+    User.register(self.registerUser, handleLogin);
   }
 
   self.logout = function() {

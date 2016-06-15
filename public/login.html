@@ -18,16 +18,16 @@
   <h3>Register</h3>
   <form ng-submit="user.register()"  class="form-group" novalidate>
     <label for="username">Username</label>
-    <input type="text" name="username"   class="form-control" placeholder="Username" ng-model="user.currentUser.username">
+    <input type="text" name="username"   class="form-control" placeholder="Username" ng-model="user.registerUser.username">
 
     <label for="email">Email</label>
-    <input type="email" name="email"  class="form-control" placeholder="Email" ng-model="user.currentUser.email">
+    <input type="email" name="email"  class="form-control" placeholder="Email" ng-model="user.registerUser.email">
 
     <label for="password">Password</label>
-    <input type="password" name="password"  class="form-control" placeholder="Password" ng-model="user.agent.password">
+    <input type="password" name="password"  class="form-control" placeholder="Password" ng-model="user.registerUser.password">
 
     <label for="passwordConfirmation">Password Confirmation</label>
-    <input type="password" name="passwordConfirmation"  class="form-control" placeholder="Retype password" ng-model="user.agent.passwordConfirmation">
+    <input type="password" name="passwordConfirmation"  class="form-control" placeholder="Retype password" ng-model="user.registerUser.passwordConfirmation">
 
     <input type="submit" class="btn btn-primary" value="Register">
   </form>

@@ -1,5 +1,5 @@
-angular.module('VinceApp',['ngMaterial', 'angular-jwt', 'ngMessages', 'material.svgAssetsCache','ui.router','ngSanitize'])
-  .constant('API', '/')
+angular.module('VinceApp',['ngResource','ngMaterial', 'angular-jwt', 'ngMessages', 'material.svgAssetsCache','ui.router','ngSanitize'])
+  .constant('API', 'http://ec2-54-149-134-124.us-west-2.compute.amazonaws.com/')
   .config(InterceptorConfig)
   .config(Router);
 
