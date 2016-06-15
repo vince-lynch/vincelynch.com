@@ -1,4 +1,5 @@
 angular.module('VinceApp',['ngMaterial', 'angular-jwt', 'ngMessages', 'material.svgAssetsCache','ui.router','ngSanitize'])
+  .constant('API', '/')
   .config(InterceptorConfig)
   .config(Router);
 
