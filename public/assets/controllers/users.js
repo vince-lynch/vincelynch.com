@@ -10,6 +10,7 @@ function UsersController(User, tokenService) {
 
   self.all = [];
   self.currentUser = tokenService.getUser();
+  console.log(self.currentUser);
 
   function handleLogin(res) {
     console.log(res);
@@ -42,7 +43,9 @@ function UsersController(User, tokenService) {
   }
 
   self.getUsers = function() {
+    console.log("getUsers() function has been called")
     self.all = User.query();
+    console.log(self.all)
   }
 
   self.isLoggedIn = function(){

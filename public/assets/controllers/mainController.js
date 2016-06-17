@@ -2,8 +2,8 @@
 angular.module('VinceApp')
 .controller('AppCtrl',AppCtrl);
 
-AppCtrl.$inject = ['FeedFactory', '$scope', '$sce'];
-function AppCtrl(FeedFactory, $scope, $sce) {
+AppCtrl.$inject = ['FeedFactory', '$scope', '$sce','tokenService'];
+function AppCtrl(FeedFactory, $scope, $sce,tokenService) {
 
 $scope.feed = [];
 
@@ -18,7 +18,7 @@ $scope.embedCode = function(embed){
 var Feed = FeedFactory.get()
 .then(function successCallback(response) {
     console.log(response);
-    $scope.feed = response.data;
+    $scope.feed = response.data.reverse();
   }, function errorCallback(response) {
    console.log(response);
   });
@@ -26,7 +26,9 @@ var Feed = FeedFactory.get()
 $scope.statusupdate = "";
 
 $scope.postStatus = function(){
-  FeedFactory.create({link: $scope.statusupdate}).then(function successCallback(response) {
+ $scope.statuslink = $scope.statusupdate.indexOf("http") != -1 ? "http" + $scope.statusupdate.split("http")[1] : "";
+  $scope.statustext = $scope.statusupdate.split("http")[0];
+  FeedFactory.create({link: $scope.statuslink, statustext:$scope.statustext}, tokenService.getToken()).then(function successCallback(response) {
     console.log(response);
   }, function errorCallback(response) {
    console.log(response);

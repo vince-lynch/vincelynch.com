@@ -4,7 +4,8 @@ var Feed = require('../models/feed');
 function Create(req, res) {
   var preview = require("page-previewer");
   preview(req.body.link, function(err, data) {
-    if(!err) {
+    data.statusData = req.body;
+    if(!err) { // if no website from link (or no link) THEN
       console.log(data);
       if (req.body.link.indexOf("youtube") === -1){
         var status = new Feed({status: data});

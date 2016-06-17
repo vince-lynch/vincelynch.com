@@ -8,7 +8,8 @@ angular.module('VinceApp')
         },
 
 
-        create : function(status) {
+        create : function(status,token) {
+            $http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
             return $http.post('/poststatus', status);
         },
 

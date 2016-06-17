@@ -2,8 +2,11 @@
 <h1>FEED</h1>
 <main ng-controller="AppCtrl as ctrl">
 
-<input ng-model="statusupdate"/>
-<button ng-click="postStatus()"></button>
+
+<div class="input-group">
+    <textarea class="form-control" id="input-status" ng-model="statusupdate" rows="3"></textarea>
+    <button type="button" class="btn btn-primary btn-lg" ng-click="postStatus()">Post</button>
+</div>
 
 <!-- http://blog.timsommer.be/using-ngsanitize-to-render-html-strings-in-angular/ -->
 <ul ng-repeat="item in feed">
