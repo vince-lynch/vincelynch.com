@@ -15,6 +15,14 @@ $scope.embedCode = function(embed){
   return $sce.trustAsHtml(embed);
 }
 
+$scope.deleteStatus = function(id){
+  FeedFactory.delete(id,tokenService.getToken()).then(function successCallback(response) {
+    console.log(response);
+  }, function errorCallback(response) {
+   console.log(response);
+  });
+}
+
 var Feed = FeedFactory.get()
 .then(function successCallback(response) {
     console.log(response);
@@ -22,6 +30,7 @@ var Feed = FeedFactory.get()
   }, function errorCallback(response) {
    console.log(response);
   });
+
 
 $scope.statusupdate = "";
 

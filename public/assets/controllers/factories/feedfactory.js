@@ -14,8 +14,9 @@ angular.module('VinceApp')
         },
 
         // call to DELETE a nerd
-        delete : function(id) {
-            return $http.delete('/api/feed' + id);
+        delete : function(id,token) {
+            $http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+            return $http.delete('/api/feed/' + id);
         }
 
     }       
