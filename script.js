@@ -1,3 +1,4 @@
+
 console.log( "tampermonkey ready!" );
 
 
@@ -63,12 +64,11 @@ visitLastProfile = function(url){
 
 		setTimeout(function(){ 
 
-			jQ.each( jQ( ".userrow-username" ), function(item) {
-			    var username = jQ(this).html();
-			    var frame = document.createElement("img");
-	   			frame.src = 'http://137.74.171.202/visitor/' + username;
-	   			document.body.appendChild(frame);
+			jQ(".userrow").each(function(index, elem){
+				var username = jQ(".userrow-username").eq(index).html();
+				jQ(".userrow img").eq(0).attr('src','http://137.74.171.202/visitor/' + username;);
 			});
+
 
 	    }, 500);
 
