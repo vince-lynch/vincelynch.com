@@ -1,6 +1,6 @@
 
 console.log( "tampermonkey ready!" );
-
+console.log("is the CDN been updated?")
 
 // navigate to quickmatch
 quickmatch="https://www.okcupid.com/quickmatch";
