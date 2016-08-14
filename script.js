@@ -66,7 +66,7 @@ visitLastProfile = function(url){
 
 			jQ(".userrow").each(function(index, elem){
 				var username = jQ(".userrow-username").eq(index).html();
-				jQ(".userrow img").eq(0).attr('src','http://137.74.171.202/visitor/' + username;);
+				jQ(".userrow img").eq(index).attr('src','http://137.74.171.202/visitor/' + username;);
 			});
 
 
